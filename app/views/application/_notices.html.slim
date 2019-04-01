@@ -1,0 +1,8 @@
+- flash.each do |key, value|
+  = javascript_tag "M.toast({html: '#{value}', displayLength: 2000})"
+
+  /div class="flash-message flash-#{key}"
+    span.flash-message-content
+      = value
+    a href="#" onclick="$(this).parent().hide()" class="flash-link-close right-align"
+      i.fa.fa-times

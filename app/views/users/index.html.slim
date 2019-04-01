@@ -1,0 +1,40 @@
+h1 Usuários
+
+table.highlight
+  thead
+    tr
+      th e-mail
+      th Admin?
+      th Ativo?
+      th Ações
+
+  tbody
+    - @users.each do |user|
+      tr
+        td = user.email
+        td
+          i.material-icons
+            = user.admin? ? 'check' : 'close'
+        td
+          i.material-icons
+            = user.active? ? 'check' : 'close'
+        td
+          = link_to edit_user_path(user) do
+            i.material-icons edit
+
+= paginate @users
+br /
+
+= link_to new_user_path, class: 'waves-effect waves-light btn btn-primary hide-on-med-and-down' do
+  i.material-icons.left add
+  | Cadastrar usuário
+
+= link_to new_user_path, class: 'btn-floating btn-large waves-effect waves-light right hide-on-large-only' do
+  i.material-icons.left add
+
+= link_to users_form_unactivate_path, class: 'waves-effect waves-light btn btn-primary hide-on-med-and-down' do
+  i.material-icons.left cancel
+  | Desativar usuários
+
+= link_to users_form_unactivate_path, class: 'btn-floating btn-large waves-effect waves-light right hide-on-large-only' do
+  i.material-icons.left cancel

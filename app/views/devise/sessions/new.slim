@@ -1,0 +1,22 @@
+h4.login_title Zoom :: NPS
+
+.valign-wrapper.row.login-box
+  .col.card.hoverable.s10.pull-s1.m6.pull-m3.l4.pull-l4
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %
+      .card-content
+        = devise_error_messages!
+
+        span.card-title Log in
+        .row
+          .input-field.col.s12
+            = f.label :email
+            = f.text_field :email, autofocus: true, autocomplete: "e-mail"
+          .input-field.col.s12
+            = f.label :password
+            = f.password_field :password, autocomplete: "current-password"
+
+        /= render "devise/shared/links"
+
+      .card-action.right-align
+        input#reset.btn-flat.grey-text.waves-effect type="reset" value="Limpar" /
+        input.btn.primary.waves-effect.waves-light type="submit" value="Login" /

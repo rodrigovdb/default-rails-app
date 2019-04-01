@@ -1,0 +1,18 @@
+h4.login_title Esqueceu sua senha?
+
+.valign-wrapper.row.login-box
+  .col.card.hoverable.s10.pull-s1.m6.pull-m3.l4.pull-l4
+    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+      .card-content
+        = devise_error_messages!
+
+        span.card-title Log in
+        .row
+          .input-field.col.s12
+            = f.label :email
+            = f.email_field :email, autofocus: true, autocomplete: "email"
+
+        = render "devise/shared/links"
+
+      .card-action.right-align
+        input.btn.primary.waves-effect.waves-light type="submit" value="Enviar instruções"

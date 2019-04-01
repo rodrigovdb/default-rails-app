@@ -1,0 +1,15 @@
+default: &default
+  adapter   : postgresql
+  encoding  : unicode
+  host      : <%= ENV.fetch("POSTGRES_HOSTNAME",  'postgres') %>
+  username  : <%= ENV.fetch("POSTGRES_USERNAME",  'desenv') %>
+  password  : <%= ENV.fetch("POSTGRES_PASSWORD",  'rapadura') %>
+  port      : <%= ENV.fetch("POSTGRES_PORT",      '5432') %>
+
+development:
+  <<: *default
+  database  : nps_development
+test:
+  <<: *default
+  database  : nps_test
+

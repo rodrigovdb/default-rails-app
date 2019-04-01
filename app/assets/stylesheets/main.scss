@@ -1,0 +1,33 @@
+.menubar{
+  padding-top: 10px;
+  min-height: 100vh;
+
+  li{
+    color: #ccc;
+
+    a{
+      color: #ccc;
+      display: block;
+      padding: 10px;
+
+      @extend .valign-wrapper;
+
+      &:hover{
+        @extend .blue-grey, .darken-2;
+      }
+
+      i.material-icons {
+        float: left;
+        margin-left: 10px;
+        margin-right: 20px;
+        color: #ccc;
+      }
+    }
+
+    .menu-user-details {
+      text-align: center;
+      padding-bottom: 10px;
+    }
+  }
+}
+

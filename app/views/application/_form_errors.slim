@@ -1,0 +1,8 @@
+#error_explanation
+  h5
+    = pluralize(item.errors.count, 'erro')
+    = " encontrado#{item.errors.count > 1 ? 's' : ''}"
+  ul
+    - item.errors.full_messages.each do |message|
+      li
+        = message

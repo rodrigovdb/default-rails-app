@@ -1,0 +1,40 @@
+li
+  .menu-user-details
+    i.large.material-icons.circle.blue-grey.lighten-1 person
+    div = current_user.email
+
+li
+  = link_to edit_user_password_path, class: 'waves-effect' do
+    i.material-icons security
+    | Alterar senha
+
+li
+  = link_to destroy_user_session_path, { method: :delete }, class: 'waves-effect' do
+    i.material-icons input
+    | Sair
+
+= render 'admin_items' if current_user.admin?
+
+li
+  .divider
+
+li
+  /= link_to mailing_index_path, class: 'waves-effect' do
+    i.material-icons list
+    | Mailing
+
+li
+  /= link_to pick_project_path, class: 'waves-effect' do
+    i.material-icons touch_app
+    | Alterar projeto
+
+li
+  /= link_to scheduled_calls_path, class: 'waves-effect' do
+    i.material-icons alarm
+    | Entrevistas agendadas
+
+li
+  /= link_to report_user_productivity_path, class: 'waves-effect' do
+    i.material-icons call
+    | Produtividade
+

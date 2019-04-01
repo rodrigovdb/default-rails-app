@@ -1,0 +1,25 @@
+= form_tag users_unactivate_path do |f|
+  .row
+    .col.s12.m12
+      .card
+        .card-content
+          .card-title
+            | Desativar usuários
+          ul.collection
+            - @users.each do |user|
+              li.collection-item
+                label
+                  input type="checkbox" name="users[]" value="#{user.id}" /
+                  span
+                    = user.email
+
+        .card-action
+          .row
+            .btn-group.hide-on-med-and-down
+              button.btn.waves-effect.waves-light name="action" type="submit"
+                i.material-icons.left save
+                | Salvar
+
+            button.btn.btn-floating.waves-effect.waves-light.right.hide-on-large-only name="action" type="submit"
+              i.material-icons.left save
+
