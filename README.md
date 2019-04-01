@@ -25,6 +25,11 @@ and some dev stuffs like
 
 ## Running
 
+Create a `.env` file with
+```bash
+$ cp .env_sample .env
+```
+
 Up everything with
 ```bash
 $ docker-compose up -d
