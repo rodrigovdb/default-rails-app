@@ -5,6 +5,7 @@ git_source(:github) do |repo| "https://github.com/#{repo}.git" end
 
 ruby '2.6.3'
 
+gem 'dotenv-rails'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'mini_racer', platforms: :ruby

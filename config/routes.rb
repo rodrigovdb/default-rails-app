@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   }
 
   scope '/usuarios' do
-    get   '/desativar', to: 'users#form_unactivate',  as: :users_form_unactivate
-    post  '/desativar', to: 'users#unactivate',       as: :users_unactivate
+    get   '/desativar',     to: 'users#form_unactivate',  as: :users_form_unactivate
+    post  '/desativar',     to: 'users#unactivate',       as: :users_unactivate
+
+    get '/alterar-senha', to: 'users#edit_password',    as: :user_edit_password
+    put '/alterar-senha', to: 'users#update_password',  as: :user_update_password
   end
   resources :users, path: 'usuarios', path_names: { new: 'cadastrar', edit: 'alterar', destroy: 'excluir' }
 

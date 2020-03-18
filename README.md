@@ -69,3 +69,35 @@ module MyAppName
 ```
   "name": "my-app-name"
 ```
+
+## Routes
+```ruby
+[Declarative] Defaults#merge! and #call still accept arrays and automatically prepend those. This is now deprecated, you should replace `ary` with `Declarative::Variables::Append(ary)`.
+                   Prefix Verb   URI Pattern                                                                              Controller#Action
+         new_user_session GET    /login(.:format)                                                                         devise/sessions#new
+             user_session POST   /login(.:format)                                                                         devise/sessions#create
+     destroy_user_session DELETE /sair(.:format)                                                                          devise/sessions#destroy
+        new_user_password GET    /senha/new(.:format)                                                                     devise/passwords#new
+       edit_user_password GET    /senha/edit(.:format)                                                                    devise/passwords#edit
+            user_password PATCH  /senha(.:format)                                                                         devise/passwords#update
+                          PUT    /senha(.:format)                                                                         devise/passwords#update
+                          POST   /senha(.:format)                                                                         devise/passwords#create
+    users_form_unactivate GET    /usuarios/desativar(.:format)                                                            users#form_unactivate
+         users_unactivate POST   /usuarios/desativar(.:format)                                                            users#unactivate
+       user_edit_password GET    /usuarios/alterar-senha(.:format)                                                        users#edit_password
+     user_update_password PUT    /usuarios/alterar-senha(.:format)                                                        users#update_password
+                    users GET    /usuarios(.:format)                                                                      users#index
+                          POST   /usuarios(.:format)                                                                      users#create
+                 new_user GET    /usuarios/cadastrar(.:format)                                                            users#new
+                edit_user GET    /usuarios/:id/alterar(.:format)                                                          users#edit
+                     user GET    /usuarios/:id(.:format)                                                                  users#show
+                          PATCH  /usuarios/:id(.:format)                                                                  users#update
+                          PUT    /usuarios/:id(.:format)                                                                  users#update
+                          DELETE /usuarios/:id(.:format)                                                                  users#destroy
+                     root GET    /                                                                                        application#mock
+       rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
+rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
+       rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
+update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
+     rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
+```
