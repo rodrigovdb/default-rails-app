@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) do |repo| "https://github.com/#{repo}.git" end
 
-ruby '2.3.1'
+ruby '2.6.3'
 
 gem 'jquery-rails'
 gem 'jquery-turbolinks'

@@ -1,40 +1,37 @@
 version: '3.1'
 
 networks:
-  zoom:
+  net:
 
 services:
-  postgres:
+  db:
     image: postgres:alpine
     networks:
-      zoom:
+      net:
         aliases:
-          - postgres
+          - db
     ports:
       - 5432:5432
-    environment:
-      POSTGRES_USER:      desenv
-      POSTGRES_PASSWORD:  rapadura
-      POSTGRES_DB:        mailing_development
+    env_file:
+      - .env
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - db_data:/var/lib/postgresql/data
 
   web:
-    image: zoom_nps
+    image: my_app
     build: .
     ports:
       - 3000:3000
     env_file:
       - .env
     depends_on:
-      - postgres
+      - db
     volumes:
       - .:/var/app
     networks:
-      zoom:
+      net:
         aliases:
           - web
 
 volumes:
-  postgres_data:
-  zoom_nps_data:
+  db_data:

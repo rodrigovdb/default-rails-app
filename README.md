@@ -40,3 +40,32 @@ and access via
 ```
 http://localhost:3000
 ```
+
+## Customizing
+
+**.env**
+```
+POSTGRES_DB=your-app-name
+```
+
+**docker-compose.yml**
+```
+web:
+  image: your-app-name
+```
+
+**config/cable.yml**
+```
+production:
+  channel_prefix: <your-app-name>_production
+```
+
+**config/application.rb**
+```
+module MyAppName
+```
+
+**package.json**
+```
+  "name": "my-app-name"
+```
