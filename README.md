@@ -72,7 +72,6 @@ module MyAppName
 
 ## Routes
 ```ruby
-[Declarative] Defaults#merge! and #call still accept arrays and automatically prepend those. This is now deprecated, you should replace `ary` with `Declarative::Variables::Append(ary)`.
                    Prefix Verb   URI Pattern                                                                              Controller#Action
          new_user_session GET    /login(.:format)                                                                         devise/sessions#new
              user_session POST   /login(.:format)                                                                         devise/sessions#create
