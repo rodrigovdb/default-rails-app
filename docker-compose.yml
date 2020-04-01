@@ -15,7 +15,7 @@ services:
     env_file:
       - .env
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - my_db_data:/var/lib/postgresql/data
 
   web:
     image: my_app
@@ -34,4 +34,4 @@ services:
           - web
 
 volumes:
-  db_data:
+  my_db_data:
