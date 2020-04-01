@@ -4,5 +4,5 @@ pt-BR:
       user:   Usuário
     attributes:
       user:
-        password: 'Senha'
+        password: Senha
         password_confirmation: 'Confirmação de senha'
