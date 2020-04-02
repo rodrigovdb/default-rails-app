@@ -1,7 +1,9 @@
 @import "materialize/components/color-variables";
 
-$primary-color: color("indigo", "darken-1") !default;
-$secondary-color: color("green", "accent-4") !default;
+$primary-color: color("deep-purple", "darken-1") !default;
+$secondary-color: color("light-green", "accent-4") !default;
+//$highlight-color: color("light-green", "accent-1");
+$highlight-color: color("light-green", "lighten-4");
 
 @import "materialize";
 @import "material_icons";

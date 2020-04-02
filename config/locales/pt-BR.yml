@@ -1,4 +1,7 @@
 pt-BR:
+  errors:
+    messages:
+      blank: 'não informado'
   activerecord:
     models:
       user:   Usuário

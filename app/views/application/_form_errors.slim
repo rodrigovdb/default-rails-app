@@ -1,8 +1,8 @@
-#error_explanation
+#error_explanation.card-panel.amber.accent-1
   h5
     = pluralize(item.errors.count, 'erro')
     = " encontrado#{item.errors.count > 1 ? 's' : ''}"
-  ul
+  ul.browser-default
     - item.errors.full_messages.each do |message|
       li
         = message

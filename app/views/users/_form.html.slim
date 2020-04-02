@@ -1,11 +1,11 @@
-.row
-  .col.s12
-    .card
-      .card-content
-        = simple_form_for @model do |f|
-          - if @form.errors.any?
-            = render 'form_errors', item: @form
+= simple_form_for @model do |f|
+  - if @model.errors.any?
+    = render 'form_errors', item: @model
 
+  .row
+    .col.s12
+      .card
+        .card-content
           .row
             .col.s12
               = f.input :email, placeholder: 'e-mail'
