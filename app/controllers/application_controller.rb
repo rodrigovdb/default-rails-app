@@ -14,6 +14,20 @@ class ApplicationController < ActionController::Base
   end
 
   def validate_admin
-    redirect_to_home unless current_user.admin?
+    redirect_to_unauthorized unless current_user.admin?
+  end
+
+  def validate_owner
+    return if current_user.admin?
+
+    redirect_to_unauthorized unless current_user.id == params[:id].to_i
+  end
+
+  private
+
+  def redirect_to_unauthorized
+    flash[:alert] = 'Não autorizado'
+
+    redirect_to root_path
   end
 end

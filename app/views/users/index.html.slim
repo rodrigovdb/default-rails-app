@@ -9,7 +9,7 @@ table.highlight
       th Ações
 
   tbody
-    - @users.each do |user|
+    - @model.each do |user|
       tr
         td = user.email
         td
@@ -21,8 +21,11 @@ table.highlight
         td
           = link_to edit_user_path(user) do
             i.material-icons edit
+        / td
+          = link_to user, method: :delete, data: { confirm: 'Está certo disso?' } do
+            i.material-icons delete 
 
-= paginate @users
+= paginate @model
 br /
 
 = link_to new_user_path, class: 'waves-effect waves-light btn btn-primary hide-on-med-and-down' do
