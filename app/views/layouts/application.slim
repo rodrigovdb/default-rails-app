@@ -16,19 +16,20 @@ html ang="#{I18n.locale}"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
-	body
-    nav.hide-on-large-only
+  body
+    - if user_signed_in?
       = render 'top_nav'
-    = render 'menu'
+      = render 'menu'
 
     #content
       .row
-        /#sidemenu.col.l2.hide-on-med-and-down.blue-grey.darken-3
-        #sidemenu.col.l2.hide-on-med-and-down
-          ul.menubar
-            = render 'sidebar'
+        .col.s12.m3.l3.xl2
+          - if user_signed_in?
+            #side-menu-bar.hide-on-med-and-down
+              ul
+                = render 'sidebar'
 
-        .col.s12.l10
+        .col.s12.m12.l9.xl10
           = render 'notices'
 
           = yield

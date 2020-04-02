@@ -1,7 +1,11 @@
-.menubar{
-  padding-top: 10px;
-  min-height: 100vh;
+#toast-container {
+  top     : 30px !important;
+  right   : 10px !important;
+  left    : auto;
+  bottom  : auto;
+}
 
+#side-menu-bar{
   li{
     a{
       color: #555;
@@ -19,17 +23,10 @@
         margin-left: 10px;
         margin-right: 20px;
       }
-
     }
   }
 }
 
-#toast-container {
-  top     : 30px !important;
-  right   : 10px !important;
-  left    : auto;
-  bottom  : auto;
-}
 .flash-message {
   margin-top: 10px;
   padding: 10px;
