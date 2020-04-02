@@ -51,10 +51,12 @@ class UsersController < ApplicationController
   end
 
   def update_password
-    run User::UpdatePassword do |result|
-      flash[:notice] = "Senha atualizada com sucesso."
+    run User::UpdatePassword do |_result|
+      flash[:notice] = 'Senha atualizada com sucesso.'
 
-      redirect_to (current_user.admin? ? users_path : root_path) and return
+      url = current_user.admin? ? users_path : root_path
+
+      redirect_to url and return
     end
 
     render :edit_password

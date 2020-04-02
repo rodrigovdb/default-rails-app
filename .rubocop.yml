@@ -1,13 +1,11 @@
 AllCops:
   Exclude:
-    - 'vendor/**/*'
-    - run*.rb
+    - bin/*
     - tmp/**
-    - bin/**
-    - db/migrate/*
     - db/schema.rb
-
-  TargetRubyVersion: 2.4
+    - db/seeds.rb
+    - db/migrate/**
+  TargetRubyVersion: 2.6
 
 Documentation:
   Enabled: false
@@ -15,7 +13,7 @@ Documentation:
 Metrics/BlockLength:
   Max: 500
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 154
 
 Metrics/ParameterLists:
@@ -41,11 +39,26 @@ Style/LambdaCall:
   EnforcedStyle: braces
 
 Style/MultilineBlockChain:
-  Enabled: false
+  Enabled: true
 
 Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: aligned
 
 Style/ParallelAssignment:
-  Enabled: false
+  Enabled: true
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true

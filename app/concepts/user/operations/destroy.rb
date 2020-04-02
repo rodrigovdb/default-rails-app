@@ -8,4 +8,3 @@ class User::Destroy < Trailblazer::Operation
     model.destroy
   end
 end
-
