@@ -3,31 +3,97 @@
   min-height: 100vh;
 
   li{
-    color: #ccc;
-
     a{
-      color: #ccc;
+      color: #555;
       display: block;
       padding: 10px;
 
       @extend .valign-wrapper;
 
       &:hover{
-        @extend .blue-grey, .darken-2;
+        @extend .light-green, .accent-1;
       }
 
       i.material-icons {
         float: left;
         margin-left: 10px;
         margin-right: 20px;
-        color: #ccc;
       }
-    }
 
-    .menu-user-details {
-      text-align: center;
-      padding-bottom: 10px;
     }
   }
 }
 
+#toast-container {
+  top     : 30px !important;
+  right   : 10px !important;
+  left    : auto;
+  bottom  : auto;
+}
+.flash-message {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #ffffef;
+  color: #555;
+}
+
+.flash-message-content {
+  margin-left: 20px;
+}
+
+.flash-notice {
+  border: solid 1px #0c0;
+}
+
+.flash-link-close {
+  color: #555;
+  float: right;
+}
+
+.menu-user-details {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#error_explanation{
+  padding: 10px;
+  background-color: #ffffef;
+  color: #555;
+
+  ul{
+    li{
+      list-style-type: disc !important;
+      margin-left: 10px;
+    }
+  }
+}
+
+#notice{
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #efffef;
+  color: #555;
+}
+
+table.highlight {
+  tbody {
+    tr {
+      &:hover {
+        @extend .light-green, .accent-1;
+      }
+
+      td {
+        a {
+          i.material-icons {
+            color: #000;
+
+            &:hover {
+              @extend .waves-effect, .waves-light;
+              color: #555;
+            }
+          }
+        }
+      }
+    }
+  }
+}
