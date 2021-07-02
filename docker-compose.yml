@@ -6,14 +6,14 @@ networks:
 services:
   db:
     image: postgres:alpine
-    networks:
-      net:
-        aliases:
-          - db
-    ports:
+     ports:
       - 5432:5432
     env_file:
       - .env
+   networks:
+      net:
+        aliases:
+          - db
     volumes:
       - my_db_data:/var/lib/postgresql/data
 
