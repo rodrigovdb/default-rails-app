@@ -9,7 +9,7 @@ gem 'dotenv-rails'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'mini_racer', platforms: :ruby
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3'
 gem 'rails', '~> 5.2.1', '>= 5.2.1.1'
 gem 'rails-i18n'
 gem 'sass-rails', '~> 5.0'
